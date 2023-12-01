@@ -2,41 +2,37 @@ use std::fs;
 
 
 fn solve1() -> u32 {
-    return fs::read_to_string("src/23/day1/input.txt")
-        .expect("error")
+    return fs::read_to_string("src/23/day1/input.txt").expect("error")
         .lines()
-        .filter_map(|s| {
-            Some(s.chars()
-                .filter(|c| c.is_digit(10))
+        .map(|s| {
+            s.chars()
+                .filter(char::is_ascii_digit)
                 .map(|c| c.to_digit(10).unwrap())
-                .collect())
+                .collect()
         }).map(|d: Vec<u32>| {
-            let a = format!("{}{}", d.first().unwrap(), d.last().unwrap());
-            a.parse::<u32>().unwrap()
+            d.first().unwrap() * 10 + d.last().unwrap()
         }).sum::<u32>();
 }
 
 fn solve2() -> u32 {
-    return fs::read_to_string("src/23/day1/input.txt")
-        .expect("error")
-        .replace("one", "one1one")
-        .replace("two", "two2two")
-        .replace("three", "three3three")
-        .replace("four", "four4four")
-        .replace("five", "five5five")
-        .replace("six", "six6six")
-        .replace("seven", "seven7seven")
-        .replace("eight", "eight8eight")
-        .replace("nine", "nine9nine")
+    return fs::read_to_string("src/23/day1/input.txt").expect("error")
+        .replace("one", "o1e")
+        .replace("two", "t2o")
+        .replace("three", "t3e")
+        .replace("four", "4")
+        .replace("five", "5e")
+        .replace("six", "6")
+        .replace("seven", "7n")
+        .replace("eight", "e8t")
+        .replace("nine", "n9e")
         .lines()
-        .filter_map(|s| {
-            Some(s.chars()
-                .filter(|c| c.is_digit(10))
+        .map(|s| {
+            s.chars()
+                .filter(char::is_ascii_digit)
                 .map(|c| c.to_digit(10).unwrap())
-                .collect())
+                .collect()
         }).map(|d: Vec<u32>| {
-            let a = format!("{}{}", d.first().unwrap(), d.last().unwrap());
-            a.parse::<u32>().unwrap()
+            d.first().unwrap() * 10 + d.last().unwrap()
         }).sum::<u32>();
 }
 
