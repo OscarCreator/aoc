@@ -29,4 +29,10 @@ path = "src/23/day5/main.rs"
 name = "23-day6"
 path = "src/23/day6/main.rs"
 
+[[bin]]
+name = "23-day7"
+path = "src/23/day7/main.rs"
+
 [dependencies]
+itertools = "0.12.0"
+test-case = "3.3.1"
