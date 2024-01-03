@@ -49,6 +49,10 @@ path = "src/23/day10/main.rs"
 name = "23-day11"
 path = "src/23/day11/main.rs"
 
+[[bin]]
+name = "23-day12"
+path = "src/23/day12/main.rs"
+
 [dependencies]
 itertools = "0.12.0"
 num = "0.4.1"
